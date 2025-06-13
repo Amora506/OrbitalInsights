@@ -29,13 +29,6 @@ body {
   background-color: space-theme-colors.$space-core-dark;
 
 
-  &.dark-mode {
-    color-scheme: dark;
-  }
-
-  @media(prefers-contrast: more) {
-    @include space-theme-colors.high-contrast-overrides(color-scheme);
-  }
 
 }
 
