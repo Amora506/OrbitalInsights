@@ -1,17 +1,18 @@
 @use '../../public/custom-theme/space-theme-colors.scss' as *;
-:host {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-}
+
+
 
 .navbar-header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 16px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
     
 
     & .flex-spacer {
