@@ -1,0 +1,42 @@
+<section #reveal class="hero-section">
+  <div class="hero-content">
+    <h1>Orbital Insights</h1>
+    <p>Explora el universo con datos, ciencia y tecnología</p>
+  </div>
+</section>
+
+
+<section #reveal class="section apod" [style.background-image]="'url(' + Apod.value()?.hdurl + ')'">
+  @if(!this.Apod.isLoading() && this.Apod.hasValue()){
+  <div class="overlay">
+    <h1>Imagen del día de la NASA Astronomy Picture of the Day (APOD)</h1>
+    <h2 class="title" >{{ this.Apod.value().title }}</h2>
+    <p class="description">{{ this.Apod.value().explanation }}</p>
+    <p class="date">{{ this.Apod.value().date }}</p>
+    <a [href]="this.Apod.value().hdurl" target="_blank">Ver imagen completa</a>
+  </div>
+  }
+</section>
+
+
+<section #reveal class="section news section-purple">
+  <div class="content-box">
+    <h3>{{ news.title }}</h3>
+    <a [href]="news.url" target="_blank">Leer más</a>
+  </div>
+</section>
+
+<section #reveal class="section launch section-indigo">
+  <div class="content-box">
+    <h3>Próximo Lanzamiento</h3>
+    <p>{{ launch.mission_name }} – {{ launch.date }}</p>
+  </div>
+</section>
+
+<section #reveal class="section fact section-dark-red">
+  <div class="content-box">
+    <blockquote>"{{ factOfTheDay }}"</blockquote>
+  </div>
+</section>
+
+

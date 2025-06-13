@@ -1,0 +1,159 @@
+@use '../../../../../public/custom-theme/space-theme-colors.scss' as *;
+
+.hero-section {
+
+    background-color: $space-surface;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+
+    background-image: url('../../../../../public/images/stars-parallax.png'); // usa tu imagen de estrellas
+    background-size: cover;
+    background-attachment: fixed; // efecto parallax
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    .hero-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-radius: 1rem;
+
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    padding: 4rem 2rem;
+    color: $space-bright;
+    background-color: $space-surface;
+    will-change: opacity, transform;
+    height: 100vh;
+        
+    &.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    &.apod {
+        
+        position: relative;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+
+        .overlay {
+            z-index: 2;
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+            max-width: 1000px;
+            backdrop-filter: blur(2px); // Efecto tipo glass
+            //background-color: $space-overlay;
+            border-radius: 16px;
+            cursor: pointer;
+
+            .title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            .date {
+                font-size: 1rem;
+                opacity: 0.7;
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(1px);
+                opacity: 0.5;
+                
+
+                
+            }
+        }
+
+
+
+
+
+    }
+
+    .content-box {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+        text-align: center;
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: $space-glow;
+            text-decoration: underline;
+        }
+
+        blockquote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: $space-light;
+        }
+    }
+}
+
+
+// === ESTILOS POR SECCIÓN (colores temáticos) ===
+.section-deep-blue {
+    background: linear-gradient(to bottom, #020205, #0b1129);
+
+}
+
+.section-purple {
+    background: linear-gradient(to bottom, #2c1446, #3b1d64);
+}
+
+.section-indigo {
+    background: linear-gradient(to bottom, #1c1a3a, #2e295d);
+}
+
+.section-dark-red {
+    background: linear-gradient(to bottom, #3a0f0f, #4a1e1e);
+}
